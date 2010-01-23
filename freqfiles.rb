@@ -114,9 +114,10 @@ if $0 == __FILE__
          within_text = false
       when /^<\/DOC>/
          #p [ docno, headline, text ]
-         headline_w = extract_keywords_mecab( headline, :tf )
+         #headline_w = extract_keywords_mecab( headline, :tf )
          text_w = extract_keywords_mecab( text, :tf )
          #text_w += headline_w
+         #STDERR.puts docno
          puts "@#{ docno }"
          text_w.each do |k, v|
             puts "#{ v } #{ k }"
