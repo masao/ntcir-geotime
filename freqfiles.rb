@@ -28,6 +28,7 @@ def extract_keywords_mecab( str, method = :default )
       next if l[0] =~ /\A[\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+\Z/o # ASCII symbol chars
       j = 1
       while lines[ i+j ]
+         break if j > 6
          break if not lines[i+j][2]
          break if not lines[i+j][1] =~ /^名詞|UNK|形容詞/o
          break if lines[i+j][0] =~ /\A[\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+\Z/o # ASCII symbol chars
@@ -115,6 +116,7 @@ if $0 == __FILE__
       when /^<\/DOC>/
          #p [ docno, headline, text ]
          #headline_w = extract_keywords_mecab( headline, :tf )
+         text = [ headline, text ].join( "\n" )
          text_w = extract_keywords_mecab( text, :tf )
          #text_w += headline_w
          #STDERR.puts docno
