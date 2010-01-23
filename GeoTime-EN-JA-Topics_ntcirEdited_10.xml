@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document ENCODING="Cp1252">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;!DOCTYPE TOPIC_SET [&lt;!ELEMENT TOPIC_SET (METADATA,TOPIC+)&gt; &lt;!ELEMENT METADATA (EXPLANATION, VERSION, LANGUAGE, CORPUS)&gt; &lt;!ELEMENT EXPLANATION (#PCDATA)&gt; &lt;!ELEMENT VERSION (#PCDATA)&gt; &lt;!ELEMENT LANGUAGE (#PCDATA)&gt; &lt;!ATTLIST LANGUAGE SOURCE (EN|JA|CT|CS) #IMPLIED&gt; &lt;!ATTLIST LANGUAGE TARGET (EN|JA|CT|CS) #REQUIRED&gt; &lt;!ELEMENT CORPUS (#PCDATA)&gt; &lt;!ELEMENT TOPIC (DESCRIPTION+,ANSWERTYPE+,NARRATIVE+,ANSWER)&gt; &lt;!ATTLIST TOPIC ID CDATA #REQUIRED&gt; &lt;!ATTLIST TOPIC TITLE CDATA #REQUIRED&gt; &lt;!ELEMENT DESCRIPTION (#PCDATA)&gt; &lt;!ATTLIST DESCRIPTION LANG (EN|JA|CT|CS) #REQUIREbD&gt; &lt;!ELEMENT ANSWERTYPE (#PCDATA)&gt; &lt;!ELEMENT NARRATIVE (#PCDATA)&gt; &lt;!ATTLIST NARRATIVE LANG (EN|JA|CT|CS) #REQUIRED&gt; &lt;!ELEMENT ANSWER (TEXT*,NUGGET*)&gt; &lt;!ELEMENT NUGGET (#PCDATA)&gt; &lt;!ATTLIST NUGGET ID CDATA #REQUIRED&gt; &lt;!ATTLIST NUGGET VITAL CDATA #REQUIRED&gt; &lt;!ATTLIST NUGGET NONVITAL CDATA #REQUIRED&gt; &lt;!ATTLIST NUGGET SCORE CDATA #REQUIRED&gt;]&gt;  
+<TOPIC_SET>
+<METADATA>
+<EXPLANATION>This is the topic file to be used in the NTCIR-8 ACLIA EN-JA and JA-JA formal evaluation.</EXPLANATION>
+<VERSION>1.0</VERSION>
+<CORPUS>Mainichi 2002-2005</CORPUS>
+</METADATA>
+<TOPIC ID="GeoTime-0001">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Astrid Lindgren die?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでアストリッド・リンドグレーンは亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know when and in what city the children's author Astrid Lindgren died.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、いつ、どの都市で、児童書作家のアストリッド・リンドグレーンが死亡したかを知りたいと思っている。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0002">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Hurricane Katrina make landfall in the United States?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこで、ハリケーン・カトリーナは、米国に上陸しましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user would like to know where and when the hurricane named Katrina, which caused extensive damage in the south-western United States, made landfall. The names of states where landfall came is acceptable, but the year alone is insufficient.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、米国南西部で非常に大規模な被害をもたらしたカトリーナという名前のハリケーンが、いつ、どこで、米国に上陸したかを知りたい。上陸した州名は正解として容認できるが、何年に上陸したかだけでは不十分である。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0003">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Paul Nitze die?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでポール・ニッツは、亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know when Paul Nitze, former USA Defense Secretary died and where he died.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは元米国国防長官のポール・ニッツがいつ、どこで死亡したかを知りたいと思っている。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0004">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did the SARS epidemic begin?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこで、SARSの流行は始まりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user is investigating the SARS (Severe acute respiratory syndrome) epidemic caused by a new strain of virus. The user wants to know when the virus was first detected and in what province of China.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、新種のウイルスが原因であるSARS（重症急性呼吸器症候群）の流行について調べている。ユーザは、ウイルスが最初に検出されたのが、いつ、中国の何省においてであったかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0005">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Katharine Hepburn die?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでキャサリン・ヘップバーンは亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user is investigating the actress Katharine Hepburn and wants to know when and where she died.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、女優のキャサリン・ヘップバーンについて調べており、いつ、どこで彼女が死亡したかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0006">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did anti-government demonstrations occur in Uzbekistan?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでウズベキスタンの反政府デモが発生しましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to　know what month and year an anti-government riot took place in Uzbekistan that was put down by military force. The user also wants to know where in Uzbekistan this took place.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、軍事力によって鎮圧されたウズベキスタンの反政府暴動が何年何月であったかを知りたいと思っている。また、ユーザはウズベキスタンのどこでこの事件が起こったかも知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0007">
+<DESCRIPTION LANG="EN">&lt;![CDATA[How old was Max Schmeling when he died, and where did he die?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[マックス・シュメリングは何歳のときに、どこで亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know where the German boxer Max Schmeling died and how old he was when he died.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、ドイツ人ボクサーのマックス・シュメリングがどこで、何歳で亡くなったかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0008">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Chechen rebels take Russians hostage in a theatre?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[ いつ、どこでチェチェン独立派は、劇場にいたロシア人を人質にしましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user would like to know when Chechen rebels terrorized and held hostage Russian theatre-goers. Also where did the hostage incident take place?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、いつ、チェチェン独立派が反乱を起こし、劇場のロシア人観客を人質にとって立てこもったかを知りたい。また、どこでこの人質事件が起こったのかも知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0009">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Rosa Parks die?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでローザ・パークスさんは亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user would like to know where and when the American civil rights activist Rosa Parks died. ]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、いつどこで、米国の公民権活動家のローザ・パークスさんが死去したかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0010">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When was the decision made on siting the ITER and where is it to be built?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつITERの設置とその建設予定地が決定しましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The ITER (International Thermonuclear Experimental Reactor) is an experimental facility for conducting international joint research on the feasibility of fusion energy. When was the decision made on where to build the facility and where is it to be sited?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ITER（国際熱核融合実験炉）は、核融合エネルギーの実現可能性に関する国際共同研究を行うための実験施設である。いつ、この施設をどこに建設するか、また、どの機関に設置するかが決定したのか？]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0011">
+<DESCRIPTION LANG="EN">&lt;![CDATA[Describe when and where train accidents occurred which had fatalities in the period 2002 to 2005. ]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[2002年から2005年の間で、いつ、どこで、死傷者がでた列車事故が起こったかを述べよ。]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know about train accidents in which people died as a result. Where did these train disasters take place and when, between 2002 and 2005?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、結果として、死者がでた列車事故について知りたい。2002年と2005年の間で、いつ、どこで、このような列車災害があったか。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0012">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did Yasser Arafat die?]]&gt;</DESCRIPTION><DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでヤーセル・アラファトは亡くなりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know about Palestinian leader Yasser Arafat, in particular when he died and where.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、パレスチナ暫定自治政府長官のヤーセル・アラファト氏について、特に、彼が、いつ、どこで死亡したか、知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0013">
+<DESCRIPTION LANG="EN">&lt;![CDATA[What Portuguese colony was transferred to China and when?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[どのポルトガル植民地が、いつ、中国に移管されましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[Sometime in the past few years a former Portuguese colony had its sovereignty transferred to China. The user wants to know the name of the colony and when the transfer took place.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[過去数年の間に、元ポルトガル植民地が主権を中国に移転した。ユーザは、その植民地名といつ主権の移転が行われたかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0014">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did a volcano erupt in Africa during 2002?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[2002年のアフリカで、いつ、どこで火山の噴火がありましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user would like to know the date in 2002 in which a volcano erupted in Africa. What was the name of the volcano and in which country is it located? ]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、2002年のいつ、アフリカのどの火山が噴火したかを知りたい。火山の名前は何か、また、どの国にあるか？]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0015">
+<DESCRIPTION LANG="EN">&lt;![CDATA[What American football team won the Superbowl in 2002, and where was the game played?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[どのアメリカンフットボールチームが、2002年のスーパーボウルで優勝しましたか、また、試合はどこで開催されましたか？]]&gt;</DESCRIPTION><NARRATIVE LANG="EN">&lt;![CDATA[The user is interested in the American football Superbowl game in 2002.  In what city was it played?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、2002年のアメリカンフットボールのスーパーボウルに興味を持っている。どの都市で、試合があったか？]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0016">
+<DESCRIPTION LANG="EN">&lt;![CDATA[ When and where were the last three Winter Olympics held?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[最近の3回の冬季オリンピックは、いつ、どこで開催されましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The Winter Olympics are held every four years.  In which year and in what city were the last three olympics held?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[冬季オリンピックは4年ごとに開催される。最近3回の冬季オリンピックは、何年に、どの都市で開催されたか?]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0017">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where was a candidate for president of a democratic South American country kidnapped by a rebel group?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこでアフリカ南部の民主的な国の大統領候補が、反政府勢力によって誘拐されましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The user wants to know  in which country and what date a presidential candidate in South America was kidnapped? ]]&gt;</NARRATIVE><NARRATIVE LANG="JA">&lt;![CDATA[ユーザは、アフリカ南部のどの国で、いつ、大統領候補が誘拐されたか知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0018">
+<DESCRIPTION LANG="EN">&lt;![CDATA[What date was a country was invaded by the United States in 2002?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[2002年に合衆国がある国に侵攻したのは何月何日でしたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The United States invaded another country in 2002.  The user wants to know the exact date of the invasion and what country was invaded]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[アメリカ合衆国は、2002年に他国に侵攻した。ユーザは、どの国に侵攻したのか、また、その正確な日付を知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0019">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did the funeral of Queen Elizabeth (the Queen Mother) take place?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこで、エリザベス女王（クイーン・マザー）の葬儀が行われたか?]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The Queen mother, Elizabeth, of the United Kingdom died in 2002.  The user wants to know the exact date and location of her funeral]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[イギリス女王の母である、エリザベスは、2002年に死亡した。ユーザは、その葬儀の正確な日付と場所を知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0020">
+<DESCRIPTION LANG="EN">&lt;![CDATA[What country is the most recent to join the UN and when did it join?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[もっとも最近に国連に加盟したのはどの国ですか、また、加盟したのはいつですか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[A European country finally joined the United Nations.  The user wants to know which country it is and when it joined.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ある欧州の国が、ついに、国連に加盟した。ユーザは、どの国がいつ加盟したのかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0021">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where were the 2010 Winter Olympics host city location announced?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どこで、2010年冬季五輪の開催都市が発表されましたか?]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The International Olympic Committee decides when and where the next Winter Olympics is held.  When was this announcement made for the next Winter Olympics,  and from what city was it made?]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[国際オリンピック委員会は、次の冬季オリンピックが、いつ、どこで開催されるかを決定する。次の冬季オリンピックについては、いつ、どこの都市から決定の発表がなされたか。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0022">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and where did a massive earthquake occur in December 2003?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[2003年12月に大規模な地震が発生したのは、いつ、どこででしたか?]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[A massive earthquake occurred in December 2003.  The user would like to know when this took place and what city and country suffered this quake]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[大規模な地震が2003年12月に発生した。ユーザは、いつ、この地震が発生し、どの国や都市がこの地震によって被害をこうむったかを知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0023">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When did the largest expansion of the European Union take place, and which countries became members? ]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[欧州連合の最大の規模拡大が生じたのはいつですか、また、どの国がメンバーになりましたか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The European Union added ten new member states.  Which countries were added and when did this addition take place?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[欧州連合が、新たに10の新規加盟国を加えた。どの国が加盟したのか、また、いつ、加盟したのか知りたい。]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0024">
+<DESCRIPTION LANG="EN">&lt;![CDATA[When and what country has banned cell phones?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[いつ、どの国が携帯電話を禁止していますか?]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[Only one country in the world forbids mobile phones.  Which one is it and when did the ban take place?]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[世界で1つの国だけが携帯電話を禁止している。それはどの国か、また、禁止したのはいつか？]]&gt;</NARRATIVE>
+</TOPIC>
+<TOPIC ID="GeoTime-0025">
+<DESCRIPTION LANG="EN">&lt;![CDATA[How long after the Sumatra earthquake did the tsunami hit Sri Lanka?]]&gt;</DESCRIPTION>
+<DESCRIPTION LANG="JA">&lt;![CDATA[スマトラ沖地震のあと、どのくらいしてから、津波がスリランカを襲ったのですか？]]&gt;</DESCRIPTION>
+<NARRATIVE LANG="EN">&lt;![CDATA[The largest earthquake in recent times occurred off the coast of Sumatra in 2005.  The earthquake caused a massive tsunami which spread across the Indian Ocean.  The user would like to know how long it took the tsunami to reach Sri Lanka.  An somewhat indefinite answer like 'a few days' is acceptable.]]&gt;</NARRATIVE>
+<NARRATIVE LANG="JA">&lt;![CDATA[ 近年で最大の地震が、2005年にスマトラ島沖で発生した。この地震は、インド洋を超えて、大規模な津波を引き起こした。ユーザは、津波がスリランカに到達するのにどのくらいかかったかを知りたい。「2－3日」のような多少あやふやな答えも許容する。]]&gt;</NARRATIVE>
+</TOPIC>
+</TOPIC_SET>
+</document>
