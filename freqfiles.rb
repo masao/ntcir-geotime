@@ -7,8 +7,6 @@ require "nkf"
 require "pp"
 require "MeCab"
 
-$KCODE = "utf8"
-
 module Math
    def self::log2( n )
       Math.log10( n ) / Math.log10( 2 )
@@ -112,6 +110,8 @@ if $0 == __FILE__
          headline = $1
       when /^<TEXT>/
          within_text = true
+      when /^<\/TEXT>/
+         within_text = false
       when /^<\/DOC>/
          #p [ docno, headline, text ]
          headline_w = extract_keywords_mecab( headline, :tf )
