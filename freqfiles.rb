@@ -14,7 +14,7 @@ module Math
 end
 
 # ASCII and Kanji symbol chars
-SYMBOL_REGEXP =  /\A[\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f、。【】「」〜～・□■◇◆☆▽▲△]+\Z/o
+SYMBOL_REGEXP =  /\A[\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f、。【】「」『』〜～・□■◇◆☆▽▼△▲○◎●←→↑↓〉＞》⇒〈＜《…〒〓]+\Z/o
 
 def extract_keywords_mecab( str, method = :default )
    mecab = MeCab::Tagger.new( '--node-format=%m\t%H\t%c\n --unk-format=%m\tUNK\t%c\n' )
