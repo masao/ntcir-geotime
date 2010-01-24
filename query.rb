@@ -2,14 +2,22 @@
 # $Id$
 
 require "rexml/document"
+require "io/nonblock"
+
+require "freqfiles.rb"
+
+# $stdout.nonblock = true
 
 topics = REXML::Document.new( open "GeoTime-EN-JA-Topics_ntcirEdited_10.xml" )
 topics.elements.each( '//TOPIC' ) do |t|
-   puts "### #{ t.attributes[ 'ID' ] }"
+   STDERR.puts "### #{ t.attributes[ 'ID' ] }"
    d = t.elements.each( './DESCRIPTION' ) do |d|
       next if not d.attributes['LANG'] == "JA"
-      #p d
-      puts d.text.sub( /\A<!\[CDATA\[/, "" ).sub( /\]\]>\Z/, "" )
+      text = d.text.sub( /\A<!\[CDATA\[/, "" ).sub( /\]\]>\Z/, "" )
+      q = extract_keywords_mecab( text )
+      open( "| ./search.pl geotime", "w" ) do |io|
+         io.puts q.map{|e| e[0] }
+      end
    end
 end
 
