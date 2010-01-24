@@ -94,11 +94,6 @@ def extract_keywords_mecab( str, method = :default )
    ranks
 end
 
-def freqfile_format( docno, vector )
-   result = []
-   result
-end
-
 if $0 == __FILE__
    count = {}
    within_text = false
