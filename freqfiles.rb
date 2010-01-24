@@ -50,7 +50,7 @@ def extract_keywords_mecab( str, method = :default )
          lines_separated = lines_separated.map{|w|
             w[2] ? [ w[0], w[1], w[2].to_f / lines_separated.size ] : w
          }
-         STDERR.puts lines_separated
+         #STDERR.puts lines_separated
          lines_ind += lines_separated
       end
    end
