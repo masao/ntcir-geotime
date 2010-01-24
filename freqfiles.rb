@@ -58,7 +58,7 @@ def extract_keywords_mecab( str, method = :default )
    #pp lines
    raise "Extracting keywords from a text failed." if lines.empty?
    min = lines_ind.map{|e| e[2].to_i }.min
-   lines = lines_ind.map{|e| [ e[0], e[1], e[2].to_i + min.abs + 1 ] } if min < 0
+   lines_ind = lines_ind.map{|e| [ e[0], e[1], e[2].to_i + min.abs + 1 ] } if min < 0
    count = Hash.new( 0 )
    score = 0
    lines_ind.each_with_index do |line, idx|
