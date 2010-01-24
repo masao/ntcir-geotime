@@ -42,6 +42,17 @@ def extract_keywords_mecab( str, method = :default )
                             ]
          j += 1
       end
+      # MeCabが中黒区切りの欧米系の人名を場合によって分割したりしなかったり
+      # するので、分割形も登録しておく。
+      if l[0] =~ /・/o
+         lines_separated = mecab.parse( l[0].gsub( /・/o, " " ).toeuc )
+         lines_separated = lines_separated.toutf8.split( /\n/ ).map{|l| l.split(/\t/) }.select{|w| w[2] and w[1] =~ /^名詞|UNK|形容詞/o and w[1] !~ /接[頭尾]|非自立|代名詞/o }
+         lines_separated = lines_separated.map{|w|
+            w[2] ? [ w[0], w[1], w[2].to_f / lines_separated.size ] : w
+         }
+         STDERR.puts lines_separated
+         lines_ind += lines_separated
+      end
    end
    #pp lines_composite
    #pp lines
