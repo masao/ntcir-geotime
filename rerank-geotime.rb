@@ -8,12 +8,13 @@ require "id2doc.rb"
 
 $KCODE = "e"
 
-ALPHA = 0.5
+ALPHA = 0.0
 
 docs = {}
 ARGF.each do |line|
    case line
    when /^###/
+      puts line
       if not docs.empty?
          docs.keys.sort_by{|e| -docs[e] }.each do |docid|
             puts [ docid, docs[ docid ]  ].join( "\t" )
@@ -38,10 +39,11 @@ ARGF.each do |line|
       mecab = MeCab::Tagger.new
       lines = mecab.parse( text ).split( /\n/ )
       geo_score = lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è|ÁÈ¿¥/ }.size
+      geo_score -= lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è,¹ñ/ }.size * 0.8
       time_score = 0
-      text.gsub( /[\d\'°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»]+Ç¯/ ){|m| time_score += 1 }
-      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»]+·î/ ){|m| time_score += 2 }
-      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»]+Æü/ ){|m| time_score += 5 }
+      text.gsub( /[\d\'°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+Ç¯/ ){|m| time_score += 1 }
+      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+·î/ ){|m| time_score += 2 }
+      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+Æü/ ){|m| time_score += 5 }
       score = ALPHA * geo_score / lines.size + (1-ALPHA) * time_score / lines.size
       score = weight.to_f * score
       #score = (1-ALPHA) * time_score / lines.size
