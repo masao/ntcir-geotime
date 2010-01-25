@@ -5,50 +5,67 @@
 require "nkf"
 require "MeCab"
 require "id2doc.rb"
+require "freqfiles.rb"
 
-$KCODE = "e"
+# $KCODE = "e"
 
-ALPHA = 0.0
+ALPHA = 0.1
 
 docs = {}
+words = {}
 ARGF.each do |line|
    case line
    when /^###/
-      puts line
       if not docs.empty?
          docs.keys.sort_by{|e| -docs[e] }.each do |docid|
-            puts [ docid, docs[ docid ]  ].join( "\t" )
+            puts [ docid, "%0.10f" % docs[ docid ]  ].join( "\t" )
          end
       end
+      puts line
       docs = {}
+      words = {}
    when /^#/
       puts line
+      if line =~ /^##\s*df\((.+?)\)\s*:\s*(\d+)$/
+         words[ NKF.nkf( "-We", $1 ) ] = $2.to_i
+      end
    else
       docid, weight = line.chomp.split( /\t/ )
-      text = ""
-      IO.popen( "./id2doc.rb #{ docid }" ) do |io|
-         io.each do |line|
-            text << line
-            break if line =~ /^<\/DOC>/
-         end
-      end
+      text = id2doc( docid )
       text = $1 if text =~ /<TEXT>(.+?)<\/TEXT>/m
       text = NKF.nkf( "-em0XZ1", text.strip ).downcase
       #p text
-      lines = []
+      total_score = 0
       mecab = MeCab::Tagger.new
-      lines = mecab.parse( text ).split( /\n/ )
-      geo_score = lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è|ÁÈ¿¥/ }.size
-      geo_score -= lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è,¹ñ/ }.size * 0.8
-      time_score = 0
-      text.gsub( /[\d\'°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+Ç¯/ ){|m| time_score += 1 }
-      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+·î/ ){|m| time_score += 2 }
-      text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºò]+Æü/ ){|m| time_score += 5 }
-      score = ALPHA * geo_score / lines.size + (1-ALPHA) * time_score / lines.size
-      score = weight.to_f * score
-      #score = (1-ALPHA) * time_score / lines.size
-      #score = time_score
-      docs[ docid ] = score
+      #puts text
+      text.split( /¡£/m ).each do |sentence|
+         lines = mecab.parse( sentence ).split( /\n/ )
+         #puts lines
+         matched_words = words.keys & lines.map{|l| l.split( /\t/ )[0] }
+         #p lines
+         next if matched_words.empty?
+         #puts sentence
+         #p matched_words
+         matched_words.each do |w|
+            geo_score = lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è|ÁÈ¿¥/ }.size
+            #geo_score -= lines.select{|l| l.split( /\t/ )[1] =~ /ÃÏ°è,¹ñ/ }.size * 0.5
+            time_score = 0
+            sentence_text = lines[0..-2].map{|l| l.split(/\t/)[0] }.join
+            sentence_text.gsub( /[\d\'°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºòº£]+Ç¯/ ){|m| time_score += 1 }
+            sentence_text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºòº£]+·î/ ){|m| time_score += 2 }
+            sentence_text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºòº£]+Æü/ ){|m| time_score += 5 }
+            next if geo_score == 0 and time_score == 0
+            #puts sentence_text
+            p [ geo_score, time_score ]
+            score = ALPHA * geo_score / lines.size * (1-ALPHA) * time_score / lines.size
+            total_score += score / Math.log2( words[w] )
+            #score = weight.to_f * score
+            #score = (1-ALPHA) * time_score / lines.size
+            #score = time_score
+         end
+      end
+      docs[ docid ] = total_score
+      #puts [ docid, total_score ].join( "\t" )
    end
 end
 if not docs.empty?
