@@ -15,8 +15,8 @@ require "bm25.pl";
 $| = 1;
 
 my %HANDLE_ALIAS = (':geotime' => "geotime",
-		    ':cache_N:geotime'		=> 94995824,	# caching size
-		    ':cache_total:geotime'		=> 97508413459,
+		    ':cache_N:geotime'		=> 377941,	# caching size
+		    ':cache_total:geotime'		=> 85340116,
 		   );
 
 my %OPT = ('n' => 100,
