@@ -15,7 +15,7 @@ topics.elements.each( '//TOPIC' ) do |t|
       text = d.text.sub( /\A<!\[CDATA\[/, "" ).sub( /\]\]>\Z/, "" )
       # text << " 訃報 / 死去" if text =~ /亡くな/
       q = extract_keywords_mecab( text )
-      open( "| ./search.pl geotime", "w" ) do |io|
+      open( "| ./search.pl #{ ARGV.join(" ") } geotime", "w" ) do |io|
          io.puts q.map{|e| e[0] }
       end
    end
