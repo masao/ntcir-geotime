@@ -20,8 +20,10 @@ SYMBOL_REGEXP =  /\A[\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f、。【】「」『�
 
 def extract_keywords_mecab( str, method = :default )
    mecab = MeCab::Tagger.new( '--node-format=%m\t%H\t%c\n --unk-format=%m\tUNK\t%c\n' )
-   str = NKF.nkf( "-Wem0XZ1", str ).gsub( /\s+/, " " ).strip.downcase
-   lines = mecab.parse( str )
+   str = NKF.nkf( "-Wem0XZ1", str ).gsub( /\s+/, " " ).strip
+   $KCODE = "e"
+   lines = mecab.parse( str.downcase )
+   $KCODE = "u"
    lines = lines.toutf8.split( /\n/ ).map{|l| l.split(/\t/) }
    #STDERR.puts lines
    lines_ind = lines.select{|l| l[2] and l[1] =~ /^名詞|UNK|形容詞/o and l[1] !~ /接[頭尾]|非自立|代名詞/o }
