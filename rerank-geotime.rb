@@ -9,7 +9,7 @@ require "freqfiles.rb"
 
 # $KCODE = "e"
 
-ALPHA = 0.1
+ALPHA = 0.5
 
 docs = {}
 words = {}
@@ -18,6 +18,7 @@ ARGF.each do |line|
    when /^###/
       if not docs.empty?
          docs.keys.sort_by{|e| -docs[e] }.each do |docid|
+            next if docs[ docid ] === 0
             puts [ docid, "%0.10f" % docs[ docid ]  ].join( "\t" )
          end
       end
@@ -56,9 +57,9 @@ ARGF.each do |line|
             sentence_text.gsub( /[\d°ìÆó»°»Í¸ÞÏ»¼·È¬¶å½½¡û¡»ºòº£]+Æü/ ){|m| time_score += 5 }
             next if geo_score == 0 and time_score == 0
             #puts sentence_text
-            p [ geo_score, time_score ]
+            #p [ geo_score, time_score ]
             score = ALPHA * geo_score / lines.size * (1-ALPHA) * time_score / lines.size
-            total_score += score / Math.log2( words[w] )
+            total_score += score / Math.log2( words[w]+1 )
             #score = weight.to_f * score
             #score = (1-ALPHA) * time_score / lines.size
             #score = time_score
