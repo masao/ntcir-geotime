@@ -48,7 +48,7 @@ ARGF.each do |line|
          #puts sentence
          #p matched_words
          matched_words.each do |w|
-            geo_score = lines.select{|l| l.split( /\t/ )[1] =~ /√œ∞Ë|¡»ø•/ }.size
+            geo_score = lines.select{|l| l.split( /\t/ )[1] =~ /√œ∞Ë/ }.size
             #geo_score -= lines.select{|l| l.split( /\t/ )[1] =~ /√œ∞Ë,πÒ/ }.size * 0.5
             time_score = 0
             sentence_text = lines[0..-2].map{|l| l.split(/\t/)[0] }.join
@@ -58,7 +58,7 @@ ARGF.each do |line|
             next if geo_score == 0 and time_score == 0
             #puts sentence_text
             #p [ geo_score, time_score ]
-            score = ALPHA * geo_score / lines.size * (1-ALPHA) * time_score / lines.size
+            score = ALPHA * geo_score / lines.size + (1-ALPHA) * time_score / lines.size
             total_score += score / Math.log2( words[w]+1 )
             #score = weight.to_f * score
             #score = (1-ALPHA) * time_score / lines.size
@@ -71,6 +71,7 @@ ARGF.each do |line|
 end
 if not docs.empty?
    docs.keys.sort_by{|e| -docs[e] }.each do |docid|
+      next if docs[ docid ] === 0
       puts [ docid, docs[ docid ]  ].join( "\t" )
    end
 end
