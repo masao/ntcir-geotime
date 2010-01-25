@@ -7,7 +7,7 @@ require "MeCab"
 require "id2doc.rb"
 require "freqfiles.rb"
 
-# $KCODE = "e"
+$KCODE = "e"
 
 ALPHA = 0.5
 
