@@ -20,6 +20,7 @@ opt.parse!(ARGV)
 docs = {}
 words = {}
 ARGF.each do |line|
+   line = NKF.nkf( "-Wem0", line.chomp )
    case line
    when /^###/
       if not docs.empty?
@@ -28,13 +29,14 @@ ARGF.each do |line|
             puts [ docid, "%0.10f" % docs[ docid ]  ].join( "\t" )
          end
       end
+      #p words
       puts line
       docs = {}
       words = {}
    when /^#/
       puts line
-      if line =~ /^##\s*df\((.+?)\)\s*:\s*(\d+)$/
-         words[ NKF.nkf( "-We", $1 ) ] = $2.to_i
+      if line =~ /\A##\s*df\(([^\)]+?)\)\s*:\s*(\d+)\Z/
+         words[ $1 ] = $2.to_i
       end
    else
       docid, weight = line.chomp.split( /\t/ )
