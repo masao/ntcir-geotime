@@ -1,0 +1,161 @@
+#!/bin/sh
+# Checking GeoTime run files
+# This script must be run at the directory where your runs are.
+# DOCLANG=JA|EN
+
+if [ $# -lt 2 ]; then
+    echo "usage: `basename $0` <topicIDfile> <GeoTimerunfile>...">&2
+    echo " e.g.: `basename $0` JA.topicid TEST-EN-JA-01-T TEST-EN-JA-02-T">&2
+    exit 1
+fi
+
+# set your awk path here
+AWK=/usr/bin/gawk
+
+TIDFILE=$1
+shift
+
+RD=1000
+# run depth
+
+TASKLAB="GEOTIME"
+
+### acceptable tags etc
+GOODTAGS="xml version|TOPIC_SET|METADATA|RUNID|DESCRIPTION|RUN_TYPE|TOPIC ID=|${TASKLAB}_RESULT| DOCID=|/TOPIC"
+
+### document ID prefixes
+JAPREF="JA-"
+ENPREF="NYT_ENG_"
+
+TEMP=temp.$HOST.$$
+
+
+for RUNFILE in $@; do
+
+ echo "#Checking $RUNFILE - if there is no ERROR message below, then this runfile is probably fine."
+
+ echo "  Checking that runfilename equals runID..."
+
+ WC=`grep -c "<RUNID>" $RUNFILE`
+
+ if [ $WC -eq 0 ]; then
+
+  echo "#ERROR: RUNID not found." 
+  exit
+
+ elif [ $WC -ne 1 ]; then
+
+  echo "#ERROR: More than one RUNIDs found:" 
+  grep "<RUNID>" $RUNFILE
+  exit
+
+ fi
+
+# now we know there is only one RUNID line.
+
+ RUNFSTEM=`basename $RUNFILE .xml`
+ RUNID=`grep "<RUNID>" $RUNFILE | sed 's/.*<RUNID>//; s/<\/RUNID>.*//'`
+
+ if [ $RUNFSTEM != $RUNID ]; then
+  if [ $RUNFILE != $RUNID ]; then
+
+   echo "#ERROR: Filename= $RUNFILE is different from your RUNID=$RUNID" 
+   exit
+
+  fi
+
+ fi
+
+ echo "  Checking that there are no illegal tags..."
+ WC=`egrep -v "$GOODTAGS" $RUNFILE | grep -c "<"`
+
+ if [ $WC -ne 0 ]; then
+
+  echo "#ERROR: Illegal tags found:" 
+  egrep -v "$GOODTAGS" $RUNFILE | grep "<"
+  exit
+
+ fi
+
+
+ echo "  Checking that there are no illegal topicIDs..."    
+ grep "<TOPIC ID=" $RUNFILE | sed 's/.*ID="//;s/">.*//' | sort > $TEMP
+ # topicIDs in runfile
+
+ diff $TIDFILE $TEMP | grep ">" | while read DUMMY TID; do
+
+  echo "#ERROR: Illegal topicID found:" $TID
+  exit # just output the first illegal ID
+ 
+ done
+
+ echo "  Checking that there are no duplicate topicIDs..."
+ cat $TEMP | uniq -c | while read COUNT TID; do
+
+  if [ $COUNT -gt 1 ]; then
+
+   echo "#ERROR: duplicate topicID" $TID
+
+  fi      
+ 
+ done
+
+ rm $TEMP
+
+ ( cat $TIDFILE; grep "<TOPIC ID=" $RUNFILE |
+ sed 's/.*ID="//;s/">.*//' ) | sort |
+ uniq -c | while read COUNT TID; do
+
+  if [ $COUNT -gt 2 ]; then
+   # there must be duplicates in the run file
+
+   echo "#ERROR: topicID= $TID appears more than once." 
+   exit
+
+  fi
+
+ done
+
+
+ echo "  Checking that all docIDs are of the correct format..."
+
+ DOCLANG=`echo $RUNFILE | sed 's/-[0-9][0-9]-.*$//;s/^.*-//'`
+
+ if [ $DOCLANG = "JA" ]; then
+  PREFREG="$JAPREF"
+ elif [ $DOCLANG = "EN" ]; then
+  PREFREG="$ENPREF"
+ else
+  echo "#ERROR: failed to extract doc language from run name"
+  exit
+ fi
+
+ grep "DOCID=" $RUNFILE | sed 's/^.*DOCID="//; s/".*$//' | sort -u | $AWK '
+$0 !~ /^'$PREFREG'.*[0-9]$/{
+ print"#ERROR: illegal docID: " $0
+ exit
+}
+'
+
+ echo "  Checking that there are no duplicate/extra docs..."
+
+ cat $TIDFILE | while read TID; do
+
+ cat $RUNFILE | $AWK '
+/<TOPIC ID="'$TID'">/{sw=1;next}
+sw==1{if(match($0,/<'$TASKLAB'_RESULT>/)){next};
+      if(match($0,/<\/'$TASKLAB'_RESULT>/)){sw=0;exit};
+      print $3}' | sort | uniq -c | $AWK '
+# input format: <freq> DOCID="<docID>"
+{ sum += $1 }
+$1 != 1{ print "#ERROR: duplicate doc for topic '$TID' " $2 }
+END{
+ if( sum > '$RD' ){
+  print "#ERROR: too many docs (" sum ") for topic '$TID'"
+ }
+}
+'
+
+ done
+
+done
