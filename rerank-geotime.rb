@@ -2,6 +2,7 @@
 # -*- coding: euc-jp -*-
 # $Id$
 
+require "optparse"
 require "nkf"
 require "MeCab"
 require "id2doc.rb"
@@ -9,7 +10,12 @@ require "freqfiles.rb"
 
 $KCODE = "e"
 
-ALPHA = 0.5
+alpha = 0.5
+opt = OptionParser.new
+opt.on('--alpha VAL') {|v|
+   alpha = v.to_f
+}
+opt.parse!(ARGV)
 
 docs = {}
 words = {}
@@ -58,8 +64,8 @@ ARGF.each do |line|
             next if geo_score == 0 and time_score == 0
             #puts sentence_text
             #p [ geo_score, time_score ]
-            score = ALPHA * geo_score / lines.size + (1-ALPHA) * time_score / lines.size
-            total_score += score / Math.log2( words[w]+1 )
+            score = alpha * geo_score / lines.size + (1-alpha) * time_score / lines.size
+            total_score += score / words[w]
             #score = weight.to_f * score
             #score = (1-ALPHA) * time_score / lines.size
             #score = time_score
