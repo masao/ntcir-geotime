@@ -6,6 +6,7 @@ require "kconv"
 require "nkf"
 require "pp"
 require "MeCab"
+require "jcode"
 
 module Math
    def self::log2( n )
@@ -56,6 +57,14 @@ def extract_keywords_mecab( str, method = :default )
          }
          #STDERR.puts lines_separated
          lines_ind += lines_separated
+      end
+   end
+   lines_ind.each do |l|
+      if l[0] =~ /[ァ-ンー・]/o
+         katakana_normalized = l[0].gsub( /[ァィゥェォャュョッー・]/o, "" ).tr( "ガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ", "カキクケコサシスセソタチツテトハヒフヘホハヒフヘホ" )
+         if l[0] != katakana_normalized and katakana_normalized.size > 0
+            lines_ind << [ katakana_normalized, l[1], l[2].to_f / katakana_normalized.size ]
+         end
       end
    end
    #pp lines_composite
