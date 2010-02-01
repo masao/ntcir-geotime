@@ -13,7 +13,7 @@ while (<>) {
 	$qid = $1;
 	$num = 0;
     } elsif (/^([A-Z\d\-]+)\t([\d\.e\-]+)$/) {
-	print "$qid\t0\t$1\t0\t$2\t$runid\n" if $num < 100;
+	print "$qid\t0\t$1\t$num\t$2\t$runid\n" if $num < 100;
 	$num++;
     } else {
 	print STDERR $_;
