@@ -16,7 +16,7 @@ $| = 1;
 
 my %HANDLE_ALIAS = (':geotime' => "geotime",
 		    ':cache_N:geotime'		=> 377941,	# caching size
-		    ':cache_total:geotime'		=> 85340116,
+		    ':cache_total:geotime'		=> 89423136,
 		   );
 
 my %OPT = ('n' => 100,
