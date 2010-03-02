@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TOPIC_SET [
+<!ELEMENT TOPIC_SET (METADATA,TOPIC+)>
+<!ELEMENT METADATA (DESCRIPTION, VERSION, LANGUAGE, CORPUS)>
+<!ELEMENT DESCRIPTION (#PCDATA)>
+<!ELEMENT VERSION (#PCDATA)>
+<!ELEMENT LANGUAGE (#PCDATA)>
+<!ATTLIST LANGUAGE SOURCE (EN|JA|CT|CS) #IMPLIED>
+<!ATTLIST LANGUAGE TARGET (EN|JA|CT|CS) #REQUIRED>
+<!ELEMENT CORPUS (#PCDATA)>
+<!ELEMENT TOPIC (QUESTION+,ANSWERTYPE+,NARRATIVE+,ANSWER)>
+<!ATTLIST TOPIC ID CDATA #REQUIRED>
+<!ATTLIST TOPIC TITLE CDATA #REQUIRED>
+<!ELEMENT QUESTION (#PCDATA)>
+<!ATTLIST QUESTION LANG (EN|JA|CT|CS) #REQUIRED>
+<!ELEMENT ANSWERTYPE (#PCDATA)>
+<!ELEMENT NARRATIVE (#PCDATA)>
+<!ATTLIST NARRATIVE LANG (EN|JA|CT|CS) #REQUIRED>
+<!ELEMENT ANSWER (TEXT*,NUGGET*)>
+<!ELEMENT NUGGET (#PCDATA)>
+<!ATTLIST NUGGET ID CDATA #REQUIRED>
+<!ATTLIST NUGGET VITAL CDATA #REQUIRED>
+<!ATTLIST NUGGET NONVITAL CDATA #REQUIRED>
+<!ATTLIST NUGGET SCORE CDATA #REQUIRED>
+]>
+<TOPIC_SET>
+  <METADATA>
+    <DESCRIPTION>This is the topic file to be used in the NTCIR-8 ACLIA EN-JA and JA-JA formal evaluation.</DESCRIPTION>
+    <VERSION>1.0</VERSION>
+    <LANGUAGE TARGET="JA"/>
+    <CORPUS>Mainichi 2002-2005</CORPUS>
+  </METADATA>
+  <TOPIC ID="ACLIA2-JA-0001">
+    <QUESTION LANG="EN"><![CDATA[Who is Masatoshi Koshiba?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[小柴昌俊はどのような人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know why Masatoshi Koshiba won the Nobel Prize in Physics, and about his most notable achievements.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[小柴昌俊はどのような理由でノーベル物理学賞を受賞し、主としてどのような業績を残している人物であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0002">
+    <QUESTION LANG="EN"><![CDATA[When did Hurricane Katrina make landfall in the United States?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ハリケーン「カトリーナ」はいつアメリカに上陸しましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know when the hurricane named Katrina, which caused extensive damage in the south-western United States, made landfall. The year alone is not an acceptable answer.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[アメリカ南東部に被害をもたらしたカトリーナもしくはカテリーナと呼ばれているハリケーンがいつアメリカ本土に上陸したか知りたい。年のみのものは不正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0003">
+    <QUESTION LANG="EN"><![CDATA[What simultaneous explosions caused by terrorists take place in London?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ロンドン同時爆破テロとはどのような出来事ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the terrorist attacks on the London transportation system in 2005. The user would like to know when and where these attacks occurred, and who was responsible. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[日本国内でロンドン同時爆破テロ、またはロンドン同時多発テロ、ロンドン同時テロという名称で報じられている事件について調べている。この事件はいつ、ロンドンのどこで発生したものか、誰による犯行であったか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0004">
+    <QUESTION LANG="EN"><![CDATA[What are embryonic stem cells?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ＥＳ細胞とはどのようなものですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the reasons why cells referred to as Embryonic Stem Cells, or ES Cells, have become the focus of attention.The user would like to know about the problems and possibilities related to ES cells.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ＥＳ細胞あるいは胚性幹細胞と呼ばれる細胞が注目されている理由について調べている。ES細胞についてあげられている問題や可能性として、どのようなものがあるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0005">
+    <QUESTION LANG="EN"><![CDATA[Why did Japan's dispatch of the Self-Defense Force to Iraq trigger a debate over amendment of the Japanese Constitution?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[自衛隊イラク派遣が日本国憲法見直しの問題に発展したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the effects of Japan's dispatching of Self-Defense Forces to Iraq. The user would like to know the reasons that these forces were dispatched to Iraq, the details of their activities, and why this triggered debate about a reexamination of the Japanese constitution.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[自衛隊のイラク派遣による影響について調べている。イラク派遣が行われた目的、活動内容がどのようなものであったために、日本国憲法を見直す議論に発展することとなったのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0006">
+    <QUESTION LANG="EN"><![CDATA[How are Japanese companies involved in the reconstruction of Iraq?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[イラク復興と日本企業とはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the relationship between Japanese companies and the reconstruction of Iraq. The user wants to know the names of Japanese companies involved in these reconstruction activities, and the nature of these activities.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[イラク復興と日本企業とはどのような関係があるか調べている。イラク復興に携わって活動している日本企業の名称と具体的な活動内容にはどのようなものがあるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0007">
+    <QUESTION LANG="EN"><![CDATA[Which United Nations organization promotes peaceful uses of atomic energy, and is based in Vienna, Austria?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[本部をオーストリアのウィーンに置き、原子力の平和利用を促進するための国際連合機関とは何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the international organization that promotes the peaceful use of atomic energy and implements security measures to prevent military applications. The user would like to know the name of this organization, which received the Nobel Peace Prize in 2005, and which is based in Vienna, Austria. The acronym for the name is also acceptable.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[原子力の平和利用を促進し、軍事転用されないための保障措置の実施をする国際機関について調べている。2005年度のノーベル平和賞を受賞し、本部をオーストリアのウィーンに置いているこの機関の名称は何というか知りたい。なお略称も正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0008">
+    <QUESTION LANG="EN"><![CDATA[Who is the former President of Russian oil giant Yukos, arrested in 2003?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[2003年に逮捕されたロシアの石油大手ユコス社の元社長はだれですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the former President of Russian oil giant Yukos, which was effectively dissolved by the government. This person was arrested in 2003 under suspicion of tax evasion and fraud. The full name is not required.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[政府によって事実上解体されたロシアの石油大手ユコス社の元社長で、2003年に脱税や詐欺などの容疑で逮捕された人物は誰か知りたい。なおフルネームでなくとも正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0009">
+    <QUESTION LANG="EN"><![CDATA[Which administration does the International Conference on Reconstruction Assistance to Afghanistan support?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[アフガニスタン復興支援国際会議で支援されることとなった政権は何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the administration that came into being after the fall of Taliban administration in Afghanistan shortly after the terrorist attacks of September 11, 2001. This administration was supported by the International Conference on Reconstruction Assistance to Afghanistan, which was held in January 2002.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[2001年9月のアメリカ同時多発テロを機にタリバン政権が崩壊したのち誕生した政権で、2002年1月アフガニスタン復興支援国際会議が開催され、支援されることとなった政権は何というか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0010">
+    <QUESTION LANG="EN"><![CDATA[Who is Koichi Tanaka?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[田中耕一はどのような人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know why Koichi Tanaka won the Nobel Prize in Chemistry, and about his most notable achievements.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[田中耕一とはどのような理由でノーベル化学賞を受賞し、主としてどのような業績を残している人物であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0011">
+    <QUESTION LANG="EN"><![CDATA[Which countries have borders in the Kashimir region?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[カシミールとはどこの国境付近に広がる地域ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating a region that straddles the borders of several countries. The user would like to know which countries have borders in the mountainous region known as Kashmir. The name of even one country is acceptable.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[複数の国境をまたいで存在する地域について調べている。カシミールと呼ばれる山岳地方は、3国に接する地域であるが、中国、インドと、どこの国の国境付近に広がる地域であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0012">
+    <QUESTION LANG="EN"><![CDATA[What is the reputation of the movie, "Sen to Chihiro no Kamikakushi" abroad?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[映画「千と千尋の神隠し」の海外での評価はどのようなものですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA["Sen to Chihiro no Kamikakushi (Spirited Away)" is a full-length animated movie from Japan. The user wants to know about the reception it has received overseas.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[千と千尋の神隠しは日本の長編アニメーション映画であるが、この映画の海外での評価について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0013">
+    <QUESTION LANG="EN"><![CDATA[What are  the Salt Lake Paralympic Games?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ソルトレーク・パラリンピックとはどのような出来事ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the history of Paralympic Games locations. The user would like to know the dates and period of the Salt Lake Paralympic Games, as well as the names of the cities where events took place, and whether it was summer or winter games.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[パラリンピックの開催地の歴史について調べている。ソルトレーク・パラリンピックが開催された年月日、期間、都市名、夏季冬季の種別について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0014">
+    <QUESTION LANG="EN"><![CDATA[Why did the Argentine economic crisis occur?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[アルゼンチン経済危機がおこったのはなせですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the causes of the Argentine economic crisis (or Argentine currency crisis), in which the Argentine government announced that it would suspend payment on the equivalent of US$ 132 billion in public debt. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[アルゼンチン政府が1320億ドルの公的債務を一時的に支払停止することを宣言することとなった、アルゼンチン経済危機、あるいはアルゼンチン通貨危機がおこった原因は何か知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0015">
+    <QUESTION LANG="EN"><![CDATA[How was al-Zarqawi involved in the Japanese hostage incident in Iraq?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[イラク邦人人質事件とザルカウィとはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Abu Musab al-Zarqawi is an Arab terrorist who was hiding in Iraq, and was involved in an international armed terrorist organization. The user wants to know how al-Zarqawi was involved in the Japanese hostage incident in Iraq.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ザルカウィとはイラクに潜伏していたアラブ人テロリストであり、国際武装テロリストの組織に関わっていたが、このザルカウィとイラク邦人人質事件、もしくはイラク日本人人質事件とはどのような関連があるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0016">
+    <QUESTION LANG="EN"><![CDATA[Who is Soichi Noguchi?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[野口聡一とはどのような人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know about Soichi Noguchi, who was a Mission Specialist on a NASA Space Shuttle mission.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[NASAのスペースシャトルに乗船した野口聡一とはどのような人物であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0017">
+    <QUESTION LANG="EN"><![CDATA[What is Hansen's disease?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ハンセン病とはどのようなものですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know the specific symptoms and observable characteristics of the illness called "Hansen's Disease."]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ハンセン病と呼ばれる病は具体的にどのような症状や外見上の特徴がある疾患か知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0018">
+    <QUESTION LANG="EN"><![CDATA[What was former U.S. Army soldier Charles Robert Jenkins' relationship with North Korea?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ジェンキンス元米軍兵士と北朝鮮とはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the relationship between former U.S. Army soldier Charles Robert Jenkins and North Korea. Mr. Jenkins was married to Hitomi Soga, a Japanese kidnapping victim in North Korea. After Ms. Soga returned to Japan, Mr. Jenkins visited Japan with their two daughters. The user would like to learn why he crossed over to North Korea, and about his life in that country.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[チャールズ・ロバート・ジェンキンス元米軍兵士と北朝鮮との関係について調べている。ジェンキンス氏は北朝鮮で日本人拉致被害者の曽我ひとみさんと結婚し、曽我さんの日本への帰国実現後、娘二人とともに来日した。ジェンキンス氏が北朝鮮に渡った経緯や北朝鮮での生活について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0019">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between two Russian politicians, Kasianov and Putin?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ロシアの政治家、カシヤノフとプーチンとはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the relationship between former Russian Prime Minister Mikhail Kasyanov and Russian President Vladimir Putin. Kasyanov was dismissed as Prime Minister by President Putin in 2004, but during his term of office, he was considered a strong opponent for Putin in the presidential race. The user would like to know more about what happened between Kasyanov and Putin.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ロシアのミハイル・カシヤノフ元首相とプーチン大統領の関係について調べている。カシヤノフは２００４年、プーチン大統領により首相を解任されたが、首相在任中よりプーチンの対抗馬として、大統領選への出馬が有力視されていた。カシヤノフとプーチンとの間で起こった政治的事件について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0020">
+    <QUESTION LANG="EN"><![CDATA[What is Britain's stance on the euro?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[イギリスとユーロとはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the relationship between the UK and the euro. The euro is the currency used by the Economic and Monetary Union in the UE, but Britain has been exempted. The user would like to know why Britain has not introduced the euro.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[イギリスとユーロの関係について調べている。ユーロとは欧州連合における経済通貨同盟で用いられている通貨であるが、イギリスは「適用除外」を受けている。イギリスがユーロを導入しない理由について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0021">
+    <QUESTION LANG="EN"><![CDATA[What conditions do asbestos exposure victims have to meet to be eligible for workers' compensation benefits?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[アスベストと労災とはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating work-related illnesses related to asbestos. Asbestos was used extensively as a building material during the period of rapid economic growth in Japan during the 1960s. The user would like to know about how asbestos damages human health, particularly in the context of eligibility for workers' compensation. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[石綿（アスベスト）による労働災害について調べている。石綿は、建材製品として、１９６０年代の高度成長期に多く使用された。石綿が引き起こす健康被害について、労災認定との関係において知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0022">
+    <QUESTION LANG="EN"><![CDATA[Describe the "Mangyongbong-92 incident."]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[日本への入港が禁止となった万景峰号事件とはどのような事件ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the "Mangyongbong-92" incident. The Mangyongbong-92 is a passenger ferry connecting Wonsan in North Korea and Niigata in Japan. The user would like to know more about the incident in which the Mangyongbong-92 was banned from entering Japanese ports.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[万景峰号事件について調べている。万景峰号は北朝鮮の元山と日本の新潟を結ぶ貨客船。北朝鮮の万景峰号が日本への入港を禁止されることとなった万景峰号事件とはどのような事件であるのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0023">
+    <QUESTION LANG="EN"><![CDATA[Describe the Iraq War, which started in March 2003 and was fought between regular military forces. ]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００３年３月に始まった正規軍同士の戦闘であるイラク戦争とはどのような戦争ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the Iraq war between regular military forces from the U.S., Britain, and Australia, and Iraqi conventional forces. The war began in March 2003, and ended in May of the same year. The user would like to know about the background and reasons that the U.S. claims led up to the start of this war.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[米・英・豪の正規軍とイラクの正規軍との戦闘であるイラク戦争について調べている。戦争は２００３年３月に始まり５月に終結した。米国が主張する戦闘開始に至った根拠や目的について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0024">
+    <QUESTION LANG="EN"><![CDATA[Explain the SARS epidemic in November 2002.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００２年１１月に発生した新型肺炎ＳＡＲＳの流行とはどのような出来事ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the SARS (Severe acute respiratory syndrome) epidemic caused by a new strain of virus. SARS was first detected in Guangdong, China, in November 2002, and spread to many countries around the world. The user would like to know about the background and causes of the epidemic. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ウイルスによる新感染症ＳＡＲＳの流行について調べている。ＳＡＲＳは２００２年１１月に中国の広東省で発生し、世界的に流行した。感染拡大の原因と経緯について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0025">
+    <QUESTION LANG="EN"><![CDATA[Why did oil prices rise sharply in 2004?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００４年に原油価格が高騰したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Oil prices increased to record levels in May 2004. The user would like to know the reasons for this sudden increase, from the perspective of supply/demand balance.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００４年５月に原油価格は歴史的な最高値を記録した。需要と供給のバランスという観点から、原油高騰の原因について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0026">
+    <QUESTION LANG="EN"><![CDATA[Why did a riot against the government occur in Andijan, Uzbekistan?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ウズベキスタンのアンディジャンで反政府暴動が起きたのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the anti-government riot that took place in May 2005 in Andijan, in the Fergana Valley of Uzbekistan. The riot was put down by military force. The user would like to know the reasons for that riot.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ウズベキスタンのフェルガナ地方のアンディジャンで２００５年５月に起きた反政府暴動について調べている。暴動は軍隊により武力鎮圧された。暴動が起こった原因について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0027">
+    <QUESTION LANG="EN"><![CDATA[What was  the BSE incident?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ＢＳＥ問題とはどのような出来事ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA["BSE" stands for "Bovine spongiform encephalopathy," a disease that is also known as "mad cow disease." The user is investigating the effects that BSE has had on the livestock industry, the restaurant industry, and consumers in general. The user would like to know when the BSE problem first arose, and what specific issues have been raised.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[BSEとは牛海綿状脳症のことであり、狂牛病とも呼ばれるものであるが、この問題が畜産業や外食産業、一般消費者に対して与えた影響について調べている。BSE問題はいつ起こり、どのような現象を引き起こした問題であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0028">
+    <QUESTION LANG="EN"><![CDATA[Why did China implement the Renminbi exchange rate reform in July 2005?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００５年７月に中国が人民元改革を実施したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[In July 2005, China reformed the exchange rate for the Renminbi, switching to a managed floating exchange rate regime, and introducing a "currency basket" system. It is said that these reforms were implemented for political and economic reasons. The user would like to learn about the reasons for the Renminbi reforms, with a particular focus on China's relationship with the U.S.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００５年７月、中国は人民元改革を行い、人民元を管理変動相場制へ移行し、通貨バスケット制を導入した。この改革には政治的、経済的背景があるとされる。人民元改革に至った理由について、米国との関係を軸に調べたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0029">
+    <QUESTION LANG="EN"><![CDATA[Why was the Creutzfeldt-Jakob disease (CJD) case filed in both Otsu and Tokyo District Courts?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[大津と東京の両地裁にヤコブ病訴訟が提訴されたのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the court case involving Creutzfeldt-Jakob disease, which was settled in both Otsu and Tokyo District Courts on March 25, 2002. The user would like to know the details of the suit, the plaintiffs, the defendants, and the details of the settlement. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ヤコブ病訴訟について調べている。２００２年３月２５日に大津と東京の両地裁で和解が成立したヤコブ病訴訟について、訴訟内容、原告、被告、和解内容について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0030">
+    <QUESTION LANG="EN"><![CDATA[Why did President Bush make a surprise visit to Baghdad?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ブッシュ大統領がバグダッド電撃訪問したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know why President Bush made a surprise visit to Baghdad, the capital of Iraq, moving in secrecy, and not even informing his own Head of Security about his plans, because of the threat of a terrorist attack.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ブッシュ大統領が、テロ警戒のため警備担当者にも訪問計画を知らせず極秘裏に移動し、電撃的にイラクの首都バグダッドを訪問した目的とは何か知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0031">
+    <QUESTION LANG="EN"><![CDATA[When was the Kyoto Protocol enforced?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[京都議定書が発効したのはいつですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know when the Kyoto Protocol became effective. The Kyoto Protocol was adopted at the third session of the Conference of Parties to the UNFCCC (COP 3), which was held at the Kyoto International Conference Center in Kyoto, Japan. Only the full date (Year, month, and day) is acceptable. The full name of the Kyoto Protocol is "Kyoto Protocol to the United Nations Framework Convention on Climate Change."]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[京都市の国立京都国際会館で開催された第3回気候変動枠組条約締約国会議で議決された京都市の国立京都国際会館で開催された第3回気候変動枠組条約締約国会議で議決された京都議定書が発効したのはいつか知りたい。なお年だけ、月だけ、日だけは不正解とする。京都議定書は正式名称を気候変動に関する国際連合枠組条約の京都議定書という。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0032">
+    <QUESTION LANG="EN"><![CDATA[Which organization handed over Iraqi sovereignty to the Iraqi interim government?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[イラク暫定政府が主権移譲を受けたのは何という組織ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the organization that handed over Iraqi sovereignty to the Iraqi interim government, which governed Iraq from June 2, 2004, until a formal democratic civilian government was elected. The acronym for the name is also acceptable.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[2004年6月2日に成立した後、選挙によって選出された本格的な民主政権が完成するまでの間、イラクを暫定的に統治していたイラク暫定政府が、イラク統治のため主権移譲を受けたのは何という組織からか知りたい。なお、略称も正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0033">
+    <QUESTION LANG="EN"><![CDATA[Who was the President of the United States when Cheney served as Vice President?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[チェイニーが副大統領だった時の大統領はだれですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the person who served as President of the United States when Dick Cheney, an important American politician, was Vice President. The full name is not required.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[アメリカの大物政治家であるチェイニーがアメリカ副大統領を務めていた時の大統領は誰か知りたい。なお、フルネームでなくとも正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0034">
+    <QUESTION LANG="EN"><![CDATA[Who is Chen Shui-Bian?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[陳水扁とはどのような人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know about Chen Shui-Bian, who is a Chinese politician and was President of China. Specifically, the user wants to understand the period from his election as President through his term of office.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[中華民国の政治家であり、中華民国総統を務めた陳水扁とはどのような人物であるか知りたい。なお、総統となる選挙から任期中のことまでを正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0035">
+    <QUESTION LANG="EN"><![CDATA[Why did France vote against the EU Constitution?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[フランスがEU憲法を否決したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Ratification by all EU countries was required before the Treaty establishing a Constitution for Europe (the European Constitution) could be put into effect, but France refused to ratify the constitution. The user would like to know why.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[欧州憲法条約の発効のためには欧州連合加盟国すべての国において批准承認が必要とされていた。このことに関連してフランスが欧州憲法を批准拒否したのはなぜか知りたい。欧州憲法は欧州憲法条約、EU憲法ともいう。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0036">
+    <QUESTION LANG="EN"><![CDATA[What are the characteristics of the largest earthquake that occurred off the coast of Sumatra, Indonesia?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[インドネシア・スマトラ島沖地震のうち最大規模の地震はどのようなものでしたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the damages caused by earthquakes that have occurred over the past few years off the cost of Sumatra, Indonesia. The user would like to know about the most severe of these earthquakes: when and where it occurred, the scale of the earthquake, and the extent of the damages.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[近年数度に渡って起きているインドネシア・スマトラ島沖地震の被害について調べている。中でも最大規模となった地震が起きた年月日、震源地、大きさ、被害状況について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0037">
+    <QUESTION LANG="EN"><![CDATA[Describe the relationship between Brazil and China, which have jointly launched an earth resources satellite.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[共同で資源探査衛星を打ち上げたブラジルと中国とはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Brazil and China jointly launched the China–Brazil Earth Resources Satellite. The user wants to know about the relationship between Brazil and China, particularly with regard to the launch of this satellite. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ブラジルと中国とは、共同で資源探査衛星を打ち上げているが、この衛星の打ち上げが共同で行われたことに際して、ブラジルと中国とはどのような関係があるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0038">
+    <QUESTION LANG="EN"><![CDATA[Who is Deputy Secretary of State Armitage?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[アーミテージ米国務副長官とはどのような人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know about Richard Lee Armitage, who was Deputy Secretary of State under President George W. Bush.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ジョージ・ブッシュ政権下で国務副長官を務めたリチャード・リー・アーミテージとはどのような人物であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0039">
+    <QUESTION LANG="EN"><![CDATA[What links are there between the Straits of Malacca and the Japanese people?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[マラッカ海峡と日本人とはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The Strait of Malacca, a narrow stretch of water between Malaysia and the Indian island of Sumatra, is one of the world's key sea routes in terms of economic and strategic importance, ranking alongside the Suez Canal, the Panama Canal, and the Strait of Hormuz. The user wants to know about the relationship between the Strait of Malacca and the Japanese people. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[マラッカ海峡とはマレー島とインドネシアのスマトラ島を隔てる海峡であり、経済的・戦略的に見てスエズ運河・パナマ運河・ホルムズ海峡と並び世界のシーレーンの中でも最重要な場所とされているが、このマラッカ海峡と日本人との間にはどのような関係があるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0040">
+    <QUESTION LANG="EN"><![CDATA[Why did Japan refuse to eliminate tariffs on agricultural products?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[日本が農作物の関税撤廃を拒否したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Tariffs are taxes imposed on imported goods to protect domestic industry or for other reasons related to financial affairs. The user would like to know why Japan refused to eliminate tariffs on agricultural products during negotiations on the Free Trade Agreement.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[関税は国内産業の保護を目的として、または財政上の理由から、輸入貨物に対して課せられる税金であるが、自由貿易協定交渉において、日本が農作物の関税の撤廃を拒否したのはなぜか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0041">
+    <QUESTION LANG="EN"><![CDATA[Describe the Russian theater hostage incident. ]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ロシアで起きた劇場占拠事件とはどのような事件ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to learn about the Moscow theater hostage crisis, in which many people lost their lives: Where did it take place, who was responsible, why did it happen, and how was it resolved?]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[多数の人質が犠牲となったロシアの劇場占拠事件とは、いつどこで、誰によって、どのような目的のために起こされた事件であり、どのように解決したのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0042">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between the European Parliament and the European Union (EU)?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[欧州議会と欧州連合（ＥＵ）とはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the relationship between the European Parliament and the European Union (EU). The European Parliament is part of the EU; The user would like to know what role it plays.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[欧州議会と欧州連合（ＥＵ）との関係について調べている。欧州議会（ヨーロッパ議会）は欧州連合（ＥＵ）の機関の一つであるが、どのような役割を果たしているのかについて知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0043">
+    <QUESTION LANG="EN"><![CDATA[Why did the court find Michael Jackson, who was charged with sexually abusing a minor, innocent?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[児童性的虐待の容疑で起訴されたマイケル・ジャクソンが、裁判で無罪となったのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the trial of Michael Jackson. In 2003, Michael Jackson was arrested and charged on suspicion of sexually abusing a minor, and was found innocent in a trial in 2005. The user would like to know the reasons for this verdict.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[マイケル・ジャクソン裁判について調べている。マイケル・ジャクソンは、２００３年に少年に性的虐待を行ったという容疑で逮捕、起訴され、２００５年の公判で無罪となった。無罪評決となった理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0044">
+    <QUESTION LANG="EN"><![CDATA[Why did Israel accept the "roadmap" for a peace proposal aiming for peaceful coexistence between Israel and Palestine in May 2003? ]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[イスラエルとパレスチナの平和共存を目指す和平案である「ロードマップ」を２００３年５月にイスラエルが受諾したのはなぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating Israel's acceptance of a "roadmap" for a peace proposal aiming for peaceful coexistence between Israel and Palestine. U.S. President Bush led the proposal in April 2003 following the breakdown of the Oslo Accord. I would like to know why Israel accepted this proposal.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[イスラエルとパレスチナの平和共存を目指す和平案である「ロードマップ」をイスラエルが受諾したことについて調べている。オスロ合意が２０００年に破綻したことを受け、２００３年４月に米国のブッシュ大統領が中心になって提案した。イスラエルが受諾した理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0045">
+    <QUESTION LANG="EN"><![CDATA[What are Maria Sharapova's most notable achievements?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[シャラポアとはどんな業績を残している人物ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Maria Sharapova has a graceful figure and playing style, and has won three of four major women's singles tennis titles. The user would like to know about the highlights of Sharapova's tennis career. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[マリア・シャラポワは華やかな容姿とプレースタイルに加えて、4大大会で女子シングルス3冠を獲得した実力を持つ。シャラポワがテニスでどのような業績を残している人物であるか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0046">
+    <QUESTION LANG="EN"><![CDATA[Who is Berlusconi?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ベルルスコーニとは誰ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know more about Silvio Berlusconi, who is an Italian politician and businessman, and is the current Prime Minister of Italy. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[イタリアの政治家で、実業家でもある、イタリアの首相、ベルルスコーニについての人物像を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0047">
+    <QUESTION LANG="EN"><![CDATA[Why did Prime Minister Blair strengthen anti-terrorism measures?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[どうしてブレア首相はテロ対策を強化したのですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The goal of the new anti-terrorism laws proposed by British Prime Minister Blair is to crack down on terrorist activities and agitation, and to make it easier to prevent suspicious persons from entering the country and to deport such individuals. The user would like to know why Prime Minister Blair has bolstered anti-terrorism measures. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[新テロ法案はテロ行為や扇動を取り締まり、不審人物の入国禁止、国外追放を容易にするものを目指すことを示した法案だが、どうしてブレア首相はテロ対策強化をしたのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0048">
+    <QUESTION LANG="EN"><![CDATA[Why was Aung San Suu Kyi detained in Myanmar in 2003?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ミャンマーのアウンサンスーチーが２００３年に身柄を拘束されたのは、なぜですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is investigating the detention of Aung San Suu Kyi in Myanmar. Aung San Suu Kyi is the leader of a non-violent movement for democratization in Myanmar. She received the Nobel Peace Prize in 1991. The user would like to know why she has detained by the Myanmar military in 2003.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ミャンマーのアウンサンスーチーが拘束されたことについて調べている。アウンサンスーチーは、ミャンマーにおける非暴力民主化運動の指導者。１９９１年にノーベル平和賞を受賞したアウンサンスーチーが、２００３年にミャンマー軍部に身柄を拘束された理由について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0049">
+    <QUESTION LANG="EN"><![CDATA[What is the nature of the relationship between Russia and China with regard to oil pipelines?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[石油パイプラインに関してロシアと中国はどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[Russia has positioned oil and gas development in Siberia and Sakhalin, and the export of these resources, as important national economic strategies, and has called on the U.S., Japan, China, and other countries to make investments. The user would like to know about the relationship between Russia and China in the context of oil pipelines. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ロシアはシベリアやサハリンの石油、ガス開発とその輸出を国家の重要な経済戦略と位置付け、米国や日本、中国など各国に投資を呼びかけている。石油パイプラインにおけるロシアと中国の関係性について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0050">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between Japan and the European Union (EU) with regard to the selection of the site for ITER (International Thermonuclear Experimental Reactor)?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ＩＴＥＲ（国際熱核融合実験炉）の建設誘致について、日本と欧州連合（ＥＵ）とはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[ITER (International Thermonuclear Experimental Reactor) is an experimental facility for conducting international joint research on the feasibility of nuclear energy. The two main candidate sites were Cadarache in France and Rokkasho in Aomori, Japan, but in 2005, a decision was made to construct the facilities in Cadarache. The user would like to know about the coordination and negotiations between Japan and the European Union (EU) that led up to this decision.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[国際熱核融合実験炉ＩＴＥＲ（イーター）は、国際協力によって核融合エネルギーの実現性を研究するための実験施設。青森県六ヶ所村とフランスのカダラッシュが建設候補地に挙げられていたが、２００５年にカダラッシュに建設することが決定。決定に至るまでの日本と欧州連合（ＥＵ）間の交渉や調整内容について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0051">
+    <QUESTION LANG="EN"><![CDATA[What type of person was Putin during his term as President of Russia?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[プーチンは大統領時代、どのような人物でしたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about Vladimir Putin, who is a politician in the Russian Federation and acted as President of Russia. Specifically, I would like to know about his time as President. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ロシア連邦の政治家であり、ロシアの大統領を務めたウラジミール・プーチンがどのような人物か知りたい。大統領時代のことを正解とする。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0052">
+    <QUESTION LANG="EN"><![CDATA[Who is Yudhoyono?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ユドヨノとは誰ですか？]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about Susilo Bambang Yudhoyono, the President of Indonesia, who defeated President Megawati, the first directly elected President in the history of Indonesia. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[インドネシア史上初の大統領直接選挙でメガワティを破り当選したユドヨノがどのような人物か知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0053">
+    <QUESTION LANG="EN"><![CDATA[Who is the best actor in the 76th Oscar's?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[第７６回アカデミー賞の主演男優賞受賞者は誰ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the best actor in the 76th Oscar's.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[第７６回アカデミー賞の主演男優賞受賞者の名前が知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0054">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between the movie "Riding Alone for Thousands of Miles" and ZHANG Yimou?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[映画「単騎、千里を走る。 」とチャン・イーモウの間の関係は何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know the relationship between the movie "Riding Alone for Thousands of Miles" and ZHANG Yimou. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[映画「単騎、千里を走る。 」とチャン・イーモウの間の関係を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0055">
+    <QUESTION LANG="EN"><![CDATA[What is Ken Takakura's career as actor?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[高倉健の俳優としての経歴を教えてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know anything that might help Ken Takakura earn his fame.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[高倉健が名声を得る際に寄与した事柄について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0056">
+    <QUESTION LANG="EN"><![CDATA[What is the definition of Aging Society?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[高齢化社会の定義は何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the meaning of the term "Aging Society."]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[「高齢化社会」という用語の意味を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0057">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between Bali bombings and Bin Laden?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[バリ島爆弾テロ事件とビン・ラディンの間の関係は何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know the relationship between Bali bombings and Bin Laden.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[バリ島爆弾テロ事件とビン・ラディンの間の関係について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0058">
+    <QUESTION LANG="EN"><![CDATA[Where will Olympic Games 2008 be held?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００８年のオリンピックはどこで開催されますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the location of the 2008 Olympic Games.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００８年のオリンピックの開催地を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0059">
+    <QUESTION LANG="EN"><![CDATA[What happened to Lin Chi-Ling after her horse accident?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[林志玲は、落馬事故の後どうなりましたか?]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst would like to know the event that Lin Chi-Ling crushed.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[林志玲の落馬事故に関する出来事について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0060">
+    <QUESTION LANG="EN"><![CDATA[What is the virus of SARS?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ＳＡＲＳのウイルスは何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about the generation, performance or treatment of the virus of SARS.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ＳＡＲＳウイルスについて、発生、作用や対策について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0061">
+    <QUESTION LANG="EN"><![CDATA[When was Princess Nori engaged?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[紀宮様はいつ婚約されましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know when Princess Nori was engaged.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[紀宮様がいつ婚約されたか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0062">
+    <QUESTION LANG="EN"><![CDATA[Where will Expo 2010 be held?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２０１０年の万国博覧会はどこで開催されますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know which city will hold Expo 2010.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２０１０年の万国博覧会がどの都市で開催されるのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0063">
+    <QUESTION LANG="EN"><![CDATA[What is the Six-Party Talks?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[六カ国協議とは何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the meaning of the term "Six-Party Talks".]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[「六カ国協議」という用語の意味を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0064">
+    <QUESTION LANG="EN"><![CDATA[What is the definition of obesity?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[肥満の定義は何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about the attributes or performances of obesity as well as diseases it may induce.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[肥満の特徴や影響に加え、それによって引き起こされる病気について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0065">
+    <QUESTION LANG="EN"><![CDATA[Why does the bird flu threat to humans?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[鳥インフルエンザが人間に脅威を与えるのは何故か。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst wants to know the main reason that the bird flu threats to humans.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[鳥インフルエンザが人間に脅威を与える主な理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0066">
+    <QUESTION LANG="EN"><![CDATA[Why does the elder wake up earlier?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[何故高齢者は早起きなのか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know why the elder wakes up earlier.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[高齢者がなぜ早起きなのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0067">
+    <QUESTION LANG="EN"><![CDATA[Which organization declares Nobel Prize in Literature?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ノーベル文学賞を選考する組織はどこですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know which organization declares Nobel Prize in Literature.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[どの組織がノーベル文学賞を選考するのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0068">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between Liu Xiang and Johnson?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[劉翔とジョンソンはどのような関係ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is curious about the relationship between Liu Xiang and Johnson.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[劉翔とジョンソンの関係に興味がある。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0069">
+    <QUESTION LANG="EN"><![CDATA[Please list the events related to the Taliban and the United States.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[タリバンとアメリカに関連する出来事を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst would like to know the event related to the Taliban and the United States. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[タリバンとアメリカに関連する出来事について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0070">
+    <QUESTION LANG="EN"><![CDATA[Please list the event of doubt on that Chen Shui-bian was shot.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[陳水扁の銃撃疑惑に関する出来事を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The anslyst would like to know the event of doubt on that Chen Shui-bian was shot.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[陳水扁が銃撃されたことに関する疑惑に関する出来事を挙げてください。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0071">
+    <QUESTION LANG="EN"><![CDATA[Please list the movies in which Zhao Wei participated.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ヴィッキー・チャオが出演した映画を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The anslyst would like to know the movies in which Zhao Wei participated.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ヴィッキー・チャオが出演した映画について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0072">
+    <QUESTION LANG="EN"><![CDATA[How did Guo Jingjing co-perfom with Wu Minxia?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[郭晶晶と呉敏霞はどんな競演をしていますか?]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user is curious about the relationship between Guo Jingjing and Wu Minxia.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[郭晶晶と呉敏霞の関係に興味がある。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0073">
+    <QUESTION LANG="EN"><![CDATA[What are the efficacy and side-effect of the so-called "steroid"?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[いわゆるステロイドの効用と副作用はどのようなものですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about the components, attributes or functions of steroids.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ステロイドの成分や特徴、作用について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0074">
+    <QUESTION LANG="EN"><![CDATA[What does "DINK" represent?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[「ＤＩＮＫＳ」は何を意味しますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the meaning of the term "DINK".]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[「ＤＩＮＫＳ」という語の意味を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0075">
+    <QUESTION LANG="EN"><![CDATA[What is cholesterol?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[コレステロールとは何ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know about the components, attributes or functions of cholesterol as well as diseases it may induce.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[コレステロールの成分や特徴、作用とともに、それにより引き起こされる病気について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0076">
+    <QUESTION LANG="EN"><![CDATA[What is the interrelationship between the petroleum industry and wars?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[石油産業と戦争の間にはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to learn how the petroleum industry and international wars might affect each other.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[石油産業と国際紛争が互いにどのように影響し合っているかについて知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0077">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between Losheng Sanatorium amd Taipei MRT?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[楽生療養院と台北ＭＲＴとの間にはどのような関係がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know the relationship between Taipei Mass Rapid Transit and Losheng Sanatorium.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[台北ＭＲＴと楽生療養院との間の関係について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0078">
+    <QUESTION LANG="EN"><![CDATA[What economic impact Olympic Games might have on host countries?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[オリンピックはどのような経済効果を開催地にもたらしますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the economic impact of Olympic Games on host countries.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[オリンピックが開催地にもたらす経済効果について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0079">
+    <QUESTION LANG="EN"><![CDATA[What is the relationship between sleep and longevity?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[睡眠と長寿の間の関係はどのようなものですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wonders how longevity is related to how much time people spent sleeping. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[人がどれだけ睡眠に時間をかけるかということに、長寿がどのように関わっているのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0080">
+    <QUESTION LANG="EN"><![CDATA[How ultraviolet light might threaten human health?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[紫外線はどのようにして人間の健康に脅威を与えますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know in what ways ultraviolet light might influence our skin health.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[紫外線がどのようにして我々の皮膚の健康に影響を与えるのかについて知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0081">
+    <QUESTION LANG="EN"><![CDATA[When did Arafat pass away?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[アラファトはいつ亡くなりましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[When did Arafat pass away?]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[アラファトはいつ死去したか。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0082">
+    <QUESTION LANG="EN"><![CDATA[Who is the first Pope to visit a mosque?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[モスクを訪れた最初のローマ法王は誰ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the first Pope to visit a mosque. ]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[モスクを訪れた最初のローマ法王を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0083">
+    <QUESTION LANG="EN"><![CDATA[Which baseball team does Chien-Ming Wang belong to?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[王建民が所属する球団はどこですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user wants to know which team the baseball pitcher, Chien-Ming Wang, belongs to.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[王建民投手がどの球団に所属しているのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0084">
+    <QUESTION LANG="EN"><![CDATA[Which city in the southern US was hit hard by Hurricane Katrina?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[ハリケーン・カトリーナにより打撃を受けたアメリカ南部の都市はどこですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know which city in the southern US Hurricane Katrina caused great damage to.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ハリケーン・カトリーナにより深刻な打撃を受けたアメリカ南部の都市がどこなのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0085">
+    <QUESTION LANG="EN"><![CDATA[Who is the 2004 US Presidential Democratic candidate?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００４年の民主党のアメリカ大統領候補は誰ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the name of the 2004 US Presidential candidate nominated by the Democratic Party.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[民主党により指名された２００４年のアメリカ大統領候補の名前を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0086">
+    <QUESTION LANG="EN"><![CDATA[What year was Macau's return to China?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[マカオが中国に返還されたのは何年ですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[When was Macau's sovereignty trasfered to China?]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[マカオの主権が中国に移されたのはいつか。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0087">
+    <QUESTION LANG="EN"><![CDATA[Where is the 2004 Olympics held?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００４年のオリンピックはどこで開催されましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The user would like to know the location of the 2004 Olympic Games.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００４年のオリンピックの開催地について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0088">
+    <QUESTION LANG="EN"><![CDATA[Give short descriptions to the isolation of the Heping Branch of Taipei city hospital caused by SARS on 24th of April 2003. ]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[台北市立和平医院が２００３年４月２４日にＳＡＲＳにより隔離された件を簡潔に説明してください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The anslyst would like to know the truth that Taipei City Hospital - Heping Branch had to be isolated from others becasue of group SARS cases.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[台北市立和平医院がＳＡＲＳの集団感染により隔離されなければならなかったことについて事実を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0089">
+    <QUESTION LANG="EN"><![CDATA[What happened on the day of 7 July 2005 London Underground bombings?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００５年７月７日のロンドン地下鉄爆破事件において何が起きましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst wants to know three bombs on the London Underground exploded during the morning rush hour on the day of 7 July 2005.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００５年７月７日の朝のラッシュ時に、ロンドン地下鉄で３つの爆弾が爆発したことについて知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0090">
+    <QUESTION LANG="EN"><![CDATA[Please list the events of 3-19 shooting incident.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[３・１９銃撃事件にまつわる出来事を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst desire to know the sequence of events of 3-19 Presidential Assassination Attempt.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[３・１９総統暗殺未遂事件にまつわる一連の出来事について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0091">
+    <QUESTION LANG="EN"><![CDATA[Please list the events related to the Peace Negotiation between India and Pakistan.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[インドとパキスタンの間の和平交渉に関係する出来事を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst would like to understand the important issues of the Peace Negotiation between India and Pakistan, perticularly in Kashmir dispute.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[インドとパキスタンの間の和平交渉、特に、カシミール紛争に関するもので重要な事項について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0092">
+    <QUESTION LANG="EN"><![CDATA[What are the events about the contributions of Three Gorges Dam?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[三峡ダムの効果に関する出来事には何がありますか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[The analyst wants to understand the contributions of Three Gorges Dam in following aspects: Economics, Power, Environment, and Flood control.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[三峡ダムの効果を次の各観点において知りたい:　経済効果, 電力供給, 環境問題, 洪水対策。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0093">
+    <QUESTION LANG="EN"><![CDATA[What are the events related to the disputes about China-Russia eastern border agreement?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[中露東部国境協定にまつわる紛争に関連してどのような出来事がありましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the disputes about China-Russia eastern border agreement.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[中露東部国境協定にまつわる紛争について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0094">
+    <QUESTION LANG="EN"><![CDATA[What are the events of Songhua River pollution that was caused by Jilin chemical plant explosions in 2005?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００５年に起きた吉林省の化学プラントの爆発による松花江の汚染について、どのような出来事がありましたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the event about Songhua River pollution was caused by Jilin chemical plant explosions in 2005.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００５年に起きた吉林省の化学プラントの爆発による松花江の汚染にまつわる出来事について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0095">
+    <QUESTION LANG="EN"><![CDATA[Please list the events about the disputes between China and Japan for the undersea natural gas field in the East China Sea.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[東シナ海の海底天然ガス田に関する日中間の論争に関する出来事を挙げてください。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the disputes between China and Japan for the undersea natural gas field in the East China Sea.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[東シナ海の海底天然ガス田に関する日中間の論争について知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0096">
+    <QUESTION LANG="EN"><![CDATA[Why Global terrorist incidents dramatically increased in 2005?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[国際的なテロリズムに関する事件が２００５年に劇的に増えているのはなぜでしょうか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the reason of Global terrorist incidents dramatically increased in 2005.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[国際的なテロリズムに関する事件が２００５年に劇的に増えている理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0097">
+    <QUESTION LANG="EN"><![CDATA[Why the Boxing Day Tsunami caused serious damage and deaths along the coasts of Indonesia, Sri Lanka, India, and Thailand?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００４年１２月２６日の津波はなぜ深刻な被害と死者をインドネシア、スリランカ、インド、タイ沿岸にもたらしたか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know why the Boxing Day Tsunami caused serious damage and deaths along the coasts of Indonesia, Sri Lanka, India, and Thailand.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００４年１２月２６日の津波がインドネシア、スリランカ、インド、タイ沿岸に深刻な被害と死者を何故もたらしたのかを知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0098">
+    <QUESTION LANG="EN"><![CDATA[Why Hurricane Katrina is a political tipping point to President Bush?]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[なぜハリケーン・カトリーナはブッシュ大統領にとって政治的な転換点となったのですか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know why Hurricane Katrina is a political tipping point to President Bush?]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[ハリケーン・カトリーナがなぜブッシュ大統領にとって政治的な転換点となったのか知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0099">
+    <QUESTION LANG="EN"><![CDATA[Why did armed Chechens hold eight hundred hostages in Moscow theater in 2002? ]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００２年に武装したチェチェン人がモスクワ劇場に８００名の人質を取ったのはなぜか。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the main reason for the armed Chechnya took over 8 hundreds hostage in Moscow theater in 2002.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００２年に武装したチェチェン人が８００名以上の人質をモスクワ劇場に取った主な理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+  <TOPIC ID="ACLIA2-JA-0100">
+    <QUESTION LANG="EN"><![CDATA[The reason why 2003 invasion of Iraq was led by the US.]]></QUESTION>
+    <QUESTION LANG="JA"><![CDATA[２００３年のイラク侵攻を米国が主導した理由。]]></QUESTION>
+    <NARRATIVE LANG="EN"><![CDATA[User wants to know the reason why 2003 invasion of Iraq was led by the US.]]></NARRATIVE>
+    <NARRATIVE LANG="JA"><![CDATA[２００３年のイラク侵攻を米国が主導した理由を知りたい。]]></NARRATIVE>
+  </TOPIC>
+</TOPIC_SET>
+
