@@ -4,10 +4,11 @@
 require "io_bsearch.rb"
 
 IDLIST = "idlist.txt"
-def id2doc( docno )
+def id2doc( docno, basedir = "." )
    result = nil
-   open( IDLIST ) do |f|
-      line = f.bsearch( 0, File.size( IDLIST ) ) do |line|
+   idfile = File.join( basedir, IDLIST )
+   open( idfile ) do |f|
+      line = f.bsearch( 0, File.size( idfile ) ) do |line|
          this_docno = line.chomp.split( /\t/ )[0]
          docno <=> this_docno
       end
@@ -26,5 +27,5 @@ def id2doc( docno )
 end
 
 if $0 == __FILE__
-   puts id2doc( ARGV[0] )
+   puts id2doc( ARGV[0], File.dirname( $0 ) )
 end
